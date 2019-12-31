@@ -1,0 +1,78 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.maintitle {
+    display: block;
+    width: 1000px;
+    height: auto;
+    height: 100px;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.pagemain {
+    position: relative;
+    display: inline-block;
+    background-color: #ddaabb;
+    width: 900px;
+    height: auto;
+    margin: auto 0;
+    text-align: center;
+}
+#loc_dist{
+    position: relative;
+    display: inline-block;
+    margin-top: 550px;
+}
+.selecter{
+    width: 150px;
+    padding:5px;
+    background: #999999
+    font-size: 18px;
+    font-weight: bold;
+    border: inset 5px #999999;
+    border-radius: 5px;
+}
+
+#gps_eror{
+    display: none;
+}
+
+#rolet_st {
+    position: relative;
+    width: 250px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+
+.act-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0.7em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #dd4535;    /*背景色*/
+    border-radius: 10px;    /*角の丸み*/
+    border-bottom: solid 5px #bb3020;    /*少し濃い目の色に*/
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+    font-size: 17px
+}
+
+.act-button:active {
+    border-bottom: solid 2px #bb3020;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+
+}

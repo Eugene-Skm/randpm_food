@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title></title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script src="loc.js"></script>
+        
+</head>
+
+<body>
+    <header class="maintitle">
+        <h1 class="p-title">food roolet!</h1>
+    </header>
+    <main class="pagemain">
+        <div>
+            <select id="loc_dist" class="selecter" name="loc_dist">
+                <option value="300m">300m</option>
+                <option value="300m">500m</option>
+                <option value="300m">1km</option>
+                <option value="300m">2km</option>
+                <option value="300m">3km</option>
+            </select>
+        </div>
+        <div id="gps_eror" class="gps_eror">
+            <div id="eror_msg" class="">GPSを取得できませんでした。地名を入力してください</div>
+            
+            <form>
+                <input id="locname" class="textin" value="地名入力">
+            </form>
+        </div>
+        <div>
+        <a href="javascript:void(0);" onclick="getcurposi();" class="act-button" id="rolet_st" name="rolet_st">ルーレットスタート！！</a>
+        </div>
+        
+    </main>
+    <aside>
+    </aside>
+    <footer class="foot_info">
+    </footer>
+
+
+</body></html>
