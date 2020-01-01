@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
+
+<head>
     <title></title>
     <link rel="stylesheet" href="main.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -8,6 +9,7 @@
     <script src="getapi.js"></script>
     <script src="random_choose.js"></script>
     <script src="animation.js"></script>
+    <script src="judge.js"></script>
 
 </head>
 
@@ -18,25 +20,28 @@
     <main class="pagemain">
         <div id="way_selector">
             <div id="way_geo" class="way_selection">
-                <div class="way_type"><input name="way_select_radio" id="way_radio_gps" class="radio-input" type="radio" value="gps" ><label for="way_radio_gps">位置情報をもとにルーレット</label></div>
+                <div class="way_type"><input name="way_select_radio" id="way_radio_gps" class="radio-input" type="radio" value="gps" checked><label for="way_radio_gps">位置情報をもとにルーレット</label></div>
                 <div class="details">
-                    <div id="gps_detail_on" class="detail_on"><label for="detail_on" id="detail_label">追加条件を選ぶ</label><br><div id="triangle"></div></div>
+                    <div id="gps_detail_on" class="detail_on"><label for="detail_on" id="detail_label">追加条件を選ぶ</label><br>
+                        <div id="triangle"></div>
+                    </div>
                     <div id="gps_detail" class="way_detail">
-                    <div>
-            <select id="loc_dist" class="selecter" name="loc_dist">
-                <option value="1">300m</option>
-                <option value="2">500m</option>
-                <option value="3">1km</option>
-                <option value="4">2km</option>
-                <option value="5">3km</option>
-            </select>
-        </div>
-                    
+                        <div id="dist_sel">
+                            <label for="loc_dist">店の距離範囲</label>
+                            <select id="loc_dist" class="selecter" name="loc_dist">
+                                <option value="1">300m</option>
+                                <option value="2">500m</option>
+                                <option value="3">1km</option>
+                                <option value="4">2km</option>
+                                <option value="5">3km</option>
+                            </select>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div id="way_manual" class="way_selection">
-                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man" ><label for="way_radio_man">店のタイプを自分で選択</label></div>
+                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio"  value="man"><label for="way_radio_man">店のタイプを自分で選択</label></div>
                 <div class="details">
                     <div id="man_detail_on" class="detail_on">条件を選ぶ</div>
                     <div id="man_detail" class="way_detail"></div>
@@ -48,7 +53,7 @@
             <p id="categori"></p>
             <p id="tel"></p>
         </div>
-        
+
         <div id="gps_eror" class="gps_eror">
             <div id="eror_msg" class="">GPSを取得できませんでした。地名を入力してください</div>
 
@@ -57,7 +62,7 @@
             </form>
         </div>
         <div>
-            <a href="javascript:void(0);" onclick="getcurposi();" class="act-button" id="rolet_st" name="rolet_st">ルーレットスタート！！</a>
+            <a href="javascript:void(0);" onclick="judge();" class="act-button" id="rolet_st" name="rolet_st">ルーレットスタート！！</a>
         </div>
 
     </main>
@@ -66,10 +71,12 @@
     <footer id="foot_info">
         <div id="credit">
             <a href="https://api.gnavi.co.jp/api/scope/" target="_blank">
-                <img src="https://api.gnavi.co.jp/api/img/credit/api_265_65.gif" class="creditimg"width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
+                <img src="https://api.gnavi.co.jp/api/img/credit/api_265_65.gif" class="creditimg" width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
             </a>
         </div>
     </footer>
 
 
-</body></html>
+</body>
+
+</html>

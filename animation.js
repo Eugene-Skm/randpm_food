@@ -1,5 +1,5 @@
 $(function(){
-    $('#クリック箇所id').on('click',function(){
-        $('対象id').slideToggle('fast');
+    $('#gps_detail_on').on('click',function(){
+        $('#gps_detail').slideToggle('fast');
     });
 });

@@ -23,7 +23,7 @@ body {
 .pagemain {
     position: relative;
     display: inline-block;
-    background-color: #ddaabb;
+    background-color: rgba(0,0,0,0.1);
     width: 70%;
     height: auto;
     margin: auto 0;
@@ -42,7 +42,7 @@ body {
 #loc_dist{
     position: relative;
     display: inline-block;
-    margin-top: 550px;
+    margin: 5px;
 }
 .selecter{
     width: 150px;
@@ -57,7 +57,10 @@ body {
 #gps_eror{
     display: none;
 }
-
+#gps_detail{
+    position: relative;
+    display: none;
+}
 #rolet_st {
     position: relative;
     width: 300px;
@@ -116,10 +119,16 @@ footer{
     text-align: center
    
 }
+.way_selection{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+}
 .way_type{
     position:relative;
     display: inline-block;
-    width:100%;
+    width:98%;
     height:45px;
     margin: 5px 2px 0px 2px;
     padding: 2px;
@@ -128,16 +137,16 @@ footer{
     font-family: inherit;
     font-weight: bold;
     text-align: center;
-    box-shadow: 5px;
-    border: solid 2px #0013bf;
+    /*border: solid 2px #0013bf;*/
 }
 .details{
     position: relative;
     display: inline-block;
-    width: 100%;
+    width: 98%;
     height: auto;
     margin: 0px 2px 5px 2px;
-    background-color: #c7cfd6;
+    background-color: #dddddd;
+    border: solid 2px #aaaaaa
 }
 #detail_label{
         position: relative;
@@ -156,7 +165,8 @@ footer{
     border-right: solid 8px transparent;
     border-bottom: solid 8px transparent;
 }
-.detail_on{
+.detail_on:hover{
+    background-color: #888;
     
 }
 .radio-input{
@@ -168,6 +178,9 @@ footer{
   position:relative;
   margin-right: 20px;
 }
+.radio-input + label:hover{
+    color: #eeeeee;
+}
 .radio-input + label::before{
   content: "";
   display: block;
@@ -176,11 +189,11 @@ footer{
   left: 0;
   width: 15px;
   height: 15px;
-  border: 1px solid #999;
+  border: 1px solid #000;
   border-radius: 50%;
 }
 .radio-input:checked + label{
-  color:coral
+  color: #ddd
 }
 .radio-input:checked + label::after{
   content: "";
@@ -190,6 +203,6 @@ footer{
   left: 3px;
   width: 11px;
   height: 11px;
-  background: #d01137;
+  background: #cccccc;
   border-radius: 50%;
 }
