@@ -7,6 +7,7 @@
     <script src="loc.js"></script>
     <script src="getapi.js"></script>
     <script src="random_choose.js"></script>
+    <script src="animation.js"></script>
 
 </head>
 
@@ -18,19 +19,10 @@
         <div id="way_selector">
             <div id="way_geo" class="way_selection">
                 <div class="way_type"><input name="way_select_radio" id="way_radio_gps" class="radio-input" type="radio" value="gps" ><label for="way_radio_gps">位置情報をもとにルーレット</label></div>
-                <div class="way_selection_detail"></div>
-            </div>
-            <div id="way_manual" class="way_selection">
-                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man" ><label for="way_radio_man">店のタイプを自分で選択</label></div>
-                <div class="way_selection_detail"></div>
-            </div>
-        </div>
-        <div id="result">
-            <p id="shopname"></p>
-            <p id="categori"></p>
-            <p id="tel"></p>
-        </div>
-        <div>
+                <div class="details">
+                    <div id="gps_detail_on" class="detail_on"><label for="detail_on" id="detail_label">追加条件を選ぶ</label><br><div id="triangle"></div></div>
+                    <div id="gps_detail" class="way_detail">
+                    <div>
             <select id="loc_dist" class="selecter" name="loc_dist">
                 <option value="1">300m</option>
                 <option value="2">500m</option>
@@ -39,6 +31,24 @@
                 <option value="5">3km</option>
             </select>
         </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div id="way_manual" class="way_selection">
+                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man" ><label for="way_radio_man">店のタイプを自分で選択</label></div>
+                <div class="details">
+                    <div id="man_detail_on" class="detail_on">条件を選ぶ</div>
+                    <div id="man_detail" class="way_detail"></div>
+                </div>
+            </div>
+        </div>
+        <div id="result">
+            <p id="shopname"></p>
+            <p id="categori"></p>
+            <p id="tel"></p>
+        </div>
+        
         <div id="gps_eror" class="gps_eror">
             <div id="eror_msg" class="">GPSを取得できませんでした。地名を入力してください</div>
 
