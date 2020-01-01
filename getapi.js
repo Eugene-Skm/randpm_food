@@ -11,11 +11,9 @@ function jsonget(type, input) {
 
     var HitPerPage = 5;
     var whichrequest = 0;
-    console.log(input[2])
     var FinalURL = ''
     switch (type) {
         case 1: //GPS取得の成功時
-            console.log(input)
             FinalURL = RestFindURL + KeyID + '&latitude=' + input[0] + '&longitude=' + input[1] + '&range=' + input[2];
             whichrequest = 1;
             break;
@@ -30,18 +28,15 @@ function jsonget(type, input) {
         request.onload = function () {
             data = this.response;
             var hitnum = JSON.parse(data).total_hit_count
-            console.log(hitnum)
             HitPerPage = 100;
             data = ""
 
             for (i = 1; i < hitnum; i += 100) {
                 var requests = new XMLHttpRequest();
-                console.log(i)
                 requests.open('GET', FinalURL + '&hit_per_page=' + HitPerPage + '&offset=' + i, true);
                 requests.send();
                 requests.onload = function () {
                     data = this.response;
-                    console.log("H")
                     control_json(data);
                     if (FinalRestList.length == hitnum) {
                         choice_random(hitnum, FinalRestList)

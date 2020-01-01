@@ -8,7 +8,6 @@ function getcurposi() {
                 var lng = data.longitude; //緯度
                 var lat = data.latitude; //経度
                 var dist= document.getElementById('loc_dist').value;
-                console.log(dist);
                 var output=[lat,lng,dist]
                 
                 jsonget(1,output)
