@@ -3,14 +3,20 @@
 
 <head>
     <title></title>
-    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css" charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="loc.js"></script>
-    <script src="getapi.js"></script>
-    <script src="random_choose.js"></script>
-    <script src="animation.js"></script>
-    <script src="judge.js"></script>
+    <script type="text/javascript" src="loc.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="getapi.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="random_choose.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="animation.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="judge.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="format.js" charset="UTF-8"></script>
+    　
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        jsonget(2, null);
 
+    </script>
 </head>
 
 <body>
@@ -39,7 +45,7 @@
                                         <option value="5">3km</option>
                                     </select>
                                 </div>
-                               
+
                             </div>
                         </div>
                         <div class="detailer">
@@ -65,8 +71,28 @@
                     </div>
                 </div>
             </div>
-            <div  id="way_manual" class="way_selection">
-                <div class="way_type"><input  name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man"><label for="way_radio_man">エリアを自分で選択</label></div>
+            <div id="way_manual" class="way_selection">
+                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man"><label for="way_radio_man">エリアを自分で選択</label></div>
+                <div class="details" id="basic_op">
+                    <div id="area_sels">
+                        <div id="pref_sels" class="are_selbox">
+                            <label for="pref_sel">都道府県</label>
+                            <select id="pref_sel" class="selecter" name="pref_sel"></select>
+                        </div>
+                        <div id="areal_sels"class="are_selbox">
+                            <label for="area_l">大エリア</label>
+                            <select id="area_l" class="selecter" name="area_l"></select>
+                        </div>
+                        <div id="aream_sels" class="are_selbox">
+                            <label for="area_m">中エリア</label>
+                            <select id="area_m" class="selecter" name="area_m"></select>
+                        </div>
+                        <div id="areas_sels" class="are_selbox">
+                            <label for="area_s">小エリア</label>
+                            <select id="area_s" class="selecter" name="area_s"></select>
+                        </div>
+                    </div>
+                </div>
                 <div class="details">
                     <div id="man_detail_on" class="detail_on">条件を選ぶ</div>
                     <div id="man_detail" class="way_detail"></div>
@@ -77,15 +103,27 @@
         <div id="result_area">
             <div id="result">
                 <div id="shop_info">
-                    <h1><p id="shopname"></p></h1>
-                    <p id="categori"></p>
-                    <p id="tel"></p>
+                    <h6>
+                        <p id="msg" class="msg"></p>
+                    </h6>
+                    <h2>
+                        <p id="shopname"></p>
+                    </h2>
+                    <h4>
+                        <p id="categori"></p>
+                    </h4>
+                    <h4>
+                        <p id="tel"></p>
+                    </h4>
+                    <div id="shortcut_img"><a href="" id="gnavi_scut" target="_blank"><img src="g_navi.jpg" id="gnavi_logo"></a></div>
                 </div>
                 <div id="address">
                     <label for="mapframe">所在地</label>
                     <div id="mapframe"></div>
                 </div>
+
             </div>
+
             <div id="empty"></div>
         </div>
 
@@ -106,4 +144,6 @@
     </footer>
 
 
-</body></html>
+</body>
+
+</html>

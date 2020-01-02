@@ -34,13 +34,20 @@ p{
 .midasi{
     border-bottom: solid 1px #000;
 }
-
+h2,h6{
+    margin: 5px
+}
+h6{
+    text-decoration: underline
+}
 #shop_info{
     position: relative;
     display: inline-block;
-    width: 50%;
+    padding: 2px;
+    width: 48%;
     height: auto;
     float: left;
+    text-align: left;
 }
 #address{
    position: relative;
@@ -71,7 +78,7 @@ p{
 }
 #empty{
     position:relative;
-    display: inline-block;
+    display: none;
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
@@ -84,8 +91,8 @@ p{
     box-sizing: border-box;
     margin: 0px;
     padding: 5px;
-    width: 60%;
-    height: 400px;
+    width: 80%;
+    height: auto;
 }
 #result{
     position:relative;
@@ -174,7 +181,7 @@ footer{
     position: relative;
     display: inline-block;
     box-sizing: border-box;
-    width: 60%;
+    width: 80%;
     height: auto;
     /*text-align: center*/
    
@@ -206,7 +213,7 @@ footer{
     width: 98%;
     height: auto;
     margin: 0px 2px 5px 2px;
-    background-color: #dddddd;
+    background-color: #eeeeee;
     border: solid 2px #aaaaaa
 }
 #detail_label{
@@ -317,7 +324,7 @@ footer{
   left: 0;
   width: 15px;
   height: 15px;
-  border: 1px solid #999;
+  border: 2px solid #000;
   border-radius: 4px;
     
 }
@@ -337,5 +344,43 @@ footer{
   border-right:  solid 3px #d01137;
 }
 .checkbox-parts:hover{
-    color: #ffffff;
+    color: #ff0000;
+    border-bottom: solid 1px #000;
+}
+#gnavi_logo{
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    width: 150px;
+    border-radius: 10px;
+    
+    border-bottom: solid 4px  #555;
+    border-left: solid 1px  #555;
+    border-right: solid 1px  #555;
+}
+#gnavi_logo:hover{
+    border-bottom: solid 6px  #555;
+    border-left: solid 3px  #555;
+}
+#gnavi_logo:active{
+    border-bottom: solid 1px  #555;
+    border-left: solid 0px  #555;
+    border-right: solid 0px  #555;
+}
+#basic_op{
+    margin-bottom: 0px;
+}
+#area_sels{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+    padding: 2px;
+}
+.are_selbox{
+    position: relative;
+    display: inline-block;
+    margin: 2px;
+    padding: 1px;
 }
