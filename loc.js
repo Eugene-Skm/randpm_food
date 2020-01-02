@@ -1,5 +1,6 @@
-function getcurposi() {
-    if (navigator.geolocation) {
+function getinfo(js) {
+    if(js==1){
+       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             function (position) {
 
@@ -8,7 +9,20 @@ function getcurposi() {
                 var lng = data.longitude; //緯度
                 var lat = data.latitude; //経度
                 var dist= document.getElementById('loc_dist').value;
-                var output=[lat,lng,dist]
+                var drink= document.getElementById('bottomless_cup').checked;
+                var buffe= document.getElementById('buffet').checked;
+                var output=['&latitude=' +lat,'&longitude=' +lng,'&range=' +dist]
+                if(drink){
+                    output.push("&bottomless_cup=1");
+                }else{
+                    output.push("&bottomless_cup=0");
+                }
+                if(buffe){
+                    output.push("&buffet=1");
+                }else{
+                    output.push("&buffet=0");
+                }
+                
                 
                 jsonget(1,output)
             },
@@ -32,5 +46,7 @@ function getcurposi() {
                 }
             }
         );
+    } 
     }
+    
 }

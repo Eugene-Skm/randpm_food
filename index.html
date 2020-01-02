@@ -20,51 +20,76 @@
     <main class="pagemain">
         <div id="way_selector">
             <div id="way_geo" class="way_selection">
-                <div class="way_type"><input name="way_select_radio" id="way_radio_gps" class="radio-input" type="radio" value="gps" checked><label for="way_radio_gps">位置情報をもとにルーレット</label></div>
+                <div class="way_type"><input name="way_select_radio" id="way_radio_gps" class="radio-input" type="radio" value="gps" checked><label for="way_radio_gps">位置情報をもとに</label></div>
                 <div class="details">
                     <div id="gps_detail_on" class="detail_on"><label for="detail_on" id="detail_label">追加条件を選ぶ</label><br>
                         <div id="triangle"></div>
                     </div>
                     <div id="gps_detail" class="way_detail">
-                        <div id="dist_sel">
-                            <label for="loc_dist">店の距離範囲</label>
-                            <select id="loc_dist" class="selecter" name="loc_dist">
-                                <option value="1">300m</option>
-                                <option value="2">500m</option>
-                                <option value="3">1km</option>
-                                <option value="4">2km</option>
-                                <option value="5">3km</option>
-                            </select>
+                        <div class="detailer">
+                            <p class="midasi">基本条件</p>
+                            <div id="basicoption" class='optionalarea'>
+                                <div id="dist_sel">
+                                    <label for="loc_dist" class="optionlabel">店の距離範囲</label>
+                                    <select id="loc_dist" class="selecter" name="loc_dist">
+                                        <option value="1">300m</option>
+                                        <option value="2">500m</option>
+                                        <option value="3" selected>1km</option>
+                                        <option value="4">2km</option>
+                                        <option value="5">3km</option>
+                                    </select>
+                                </div>
+                               
+                            </div>
                         </div>
+                        <div class="detailer">
+                            <p class="midasi">オプション</p>
+                            <div id="detail_options" class='optionalarea'>
 
+                                <div id="checks">
+                                    <div class="checkboxes">
+                                        <label for="bottomless_cup">
+                                            <input type="checkbox" id='bottomless_cup' class='checkbox'>
+                                            <span class="checkbox-parts">飲み放題アリ</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkboxes">
+                                        <label for="buffet" class="checkboxes">
+                                            <input type="checkbox" id='buffet' class='checkbox'>
+                                            <span class="checkbox-parts">食べ放題アリ</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="way_manual" class="way_selection">
-                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio"  value="man"><label for="way_radio_man">店のタイプを自分で選択</label></div>
+            <div  id="way_manual" class="way_selection">
+                <div class="way_type"><input  name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man"><label for="way_radio_man">エリアを自分で選択</label></div>
                 <div class="details">
                     <div id="man_detail_on" class="detail_on">条件を選ぶ</div>
                     <div id="man_detail" class="way_detail"></div>
                 </div>
             </div>
         </div>
-        <div id="result">
-            <div id="shop_info">
-                <p id="shopname"></p>
-                <p id="categori"></p>
-                <p id="tel"></p>
+
+        <div id="result_area">
+            <div id="result">
+                <div id="shop_info">
+                    <h1><p id="shopname"></p></h1>
+                    <p id="categori"></p>
+                    <p id="tel"></p>
+                </div>
+                <div id="address">
+                    <label for="mapframe">所在地</label>
+                    <div id="mapframe"></div>
+                </div>
             </div>
-            
-            <div id="mapframe"></div>
+            <div id="empty"></div>
         </div>
 
-        <div id="gps_eror" class="gps_eror">
-            <div id="eror_msg" class="">GPSを取得できませんでした。地名を入力してください</div>
 
-            <form>
-                <input id="locname" class="textin" value="地名入力">
-            </form>
-        </div>
         <div>
             <a href="javascript:void(0);" onclick="judge();" class="act-button" id="rolet_st" name="rolet_st">ルーレットスタート！！</a>
         </div>
@@ -81,6 +106,4 @@
     </footer>
 
 
-</body>
-
-</html>
+</body></html>

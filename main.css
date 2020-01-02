@@ -1,6 +1,7 @@
 html {
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
 }
 
 body {
@@ -12,21 +13,26 @@ body {
 }
 
 .maintitle {
-    display: inline-;
+    display: inline-block;
     width: 70%;
     height: auto;
     margin: auto;
-    padding: 5px;
-    
+    padding: 1px;
     /*filter: blur(4px);*/
     /*background-color: rgba(256,256,256,0.7);*/
     text-align: center;
     color: #fff;
     text-stroke: 1px #000;
   -webkit-text-stroke: 2px #000;
-    font-size: 35px;
+    font-size: 30px;
     text-shadow: 3px 5px 3px #bbbbbb;
     
+}
+p{
+    margin: 2px;
+}
+.midasi{
+    border-bottom: solid 1px #000;
 }
 
 #shop_info{
@@ -36,17 +42,22 @@ body {
     height: auto;
     float: left;
 }
-#mapframe{
-    position: relative;
+#address{
+   position: relative;
     display: inline-block;
     width: 50%;
-    float: left;
+    height: 90%;
+    float: left; 
+}
+#mapframe{
+    position: relative;
+    display: inline;
 }
 #map{
     position: relative;
     display: inline-block;
     width: 95%;
-    height: 250px;
+    height: 100%;
 }
 .pagemain {
     position: relative;
@@ -58,17 +69,35 @@ body {
     margin: auto 0;
     text-align: center;
 }
-#result{
+#empty{
     position:relative;
     display: inline-block;
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
     width: 60%;
-    height: 270px;
-    
-    background-color: azure
+    height: 350px;
 }
+#result_area{
+    position:relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 5px;
+    width: 60%;
+    height: 400px;
+}
+#result{
+    position:relative;
+    display: none;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 350px;
+    background-color: #ffeecc;
+    border: solid 1px #999999
+}
+
 #loc_dist{
     position: relative;
     display: inline-block;
@@ -116,6 +145,7 @@ body {
 }
 
 .act-button:active {
+    
     border-bottom: solid 2px #bb3020;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 
@@ -146,7 +176,7 @@ footer{
     box-sizing: border-box;
     width: 60%;
     height: auto;
-    text-align: center
+    /*text-align: center*/
    
 }
 .way_selection{
@@ -168,6 +198,7 @@ footer{
     font-weight: bold;
     text-align: center;
     /*border: solid 2px #0013bf;*/
+    border-radius: 10px 10px 0px 0px;
 }
 .details{
     position: relative;
@@ -182,6 +213,29 @@ footer{
         position: relative;
     display: inline-block;
     
+    
+    
+}
+.detailer{
+    margin: 2px;
+    border: solid 1px
+}
+.way_detail{
+    
+}
+
+.detailarea{
+    vertical-align: middle;
+}
+.optionalarea{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+     justify-content:center;
+    margin: 5px;
+    padding: 10px;
+    /*border: solid 1px;*/
+   
     
 }
 #triangle{
@@ -209,7 +263,7 @@ footer{
   margin-right: 20px;
 }
 .radio-input + label:hover{
-    color: #eeeeee;
+    color: #fff;
 }
 .radio-input + label::before{
   content: "";
@@ -223,16 +277,65 @@ footer{
   border-radius: 50%;
 }
 .radio-input:checked + label{
-  color: #ddd
+  color: #eeeeee;
 }
 .radio-input:checked + label::after{
   content: "";
   display: block;
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 11px;
-  height: 11px;
-  background: #cccccc;
-  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border-radius: 50% ;
+    border: solid 2px #aaa;
+}
+.checkboxes{
+    position: relative;
+    display: inline-block;
+}
+.checkbox{
+    display: none;
+}
+.checkbox-parts{
+  padding-left: 20px;
+  position:relative;
+  margin-right: 20px;
+}
+.checkbox-parts +label{
+    position: relative;
+    padding: 5px;
+    margin: 2px;
+}
+
+.checkbox-parts::before{
+     content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+    
+}
+.checkbox :checked +.checkbox-parts::after{
+    color: #fff;
+}
+.checkbox:checked + .checkbox-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 7px;
+  height: 14px;
+  transform: rotate(40deg);
+  border-bottom:  solid 3px #d01137;
+  border-right:  solid 3px #d01137;
+}
+.checkbox-parts:hover{
+    color: #ffffff;
 }

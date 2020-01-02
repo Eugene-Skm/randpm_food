@@ -14,7 +14,12 @@ function jsonget(type, input) {
     var FinalURL = ''
     switch (type) {
         case 1: //GPS取得の成功時
-            FinalURL = RestFindURL + KeyID + '&latitude=' + input[0] + '&longitude=' + input[1] + '&range=' + input[2];
+            var backURl="";
+            for(t=0;t<input.length;t++){
+                backURl+=input[t]
+            }
+            FinalURL = RestFindURL + KeyID +backURl;
+            console.log(FinalURL)
             whichrequest = 1;
             break;
 
@@ -22,28 +27,41 @@ function jsonget(type, input) {
 
     if (whichrequest == 1) {
         var request = new XMLHttpRequest();
-        request.open('GET', FinalURL + '&hit_per_page=' + HitPerPage, true); // URLを開く
+        request.open('GET', FinalURL +  '&hit_per_page='+HitPerPage, true); // URLを開く
         var data;
         // レスポンスが返ってきた時の処理を記述 
         request.onload = function () {
             data = this.response;
             var hitnum = JSON.parse(data).total_hit_count
-            HitPerPage = 100;
-            data = ""
-
-            for (i = 1; i < hitnum; i += 100) {
-                var requests = new XMLHttpRequest();
-                requests.open('GET', FinalURL + '&hit_per_page=' + HitPerPage + '&offset=' + i, true);
-                requests.send();
-                requests.onload = function () {
-                    data = this.response;
-                    control_json(data);
-                    if (FinalRestList.length == hitnum) {
-                        choice_random(hitnum, FinalRestList)
-                        FinalRestList = [];
+            
+            console.log(hitnum)
+            if (hitnum > 1) {
+                HitPerPage = 100;
+                data = ""
+                for (i = 1; i < hitnum; i += 100) {
+                    console.log("a")
+                    var requests = new XMLHttpRequest();
+                    requests.open('GET', FinalURL + '&hit_per_page=' + HitPerPage + '&offset=' + i, true);
+                    requests.send();
+                    requests.onload = function () {
+                        data = this.response;
+                        control_json(data);
+                        console.log(FinalRestList.length)
+                        if (FinalRestList.length == hitnum) {
+                            choice_random(hitnum, FinalRestList)
+                            
+                            console.log(FinalRestList)
+                            FinalRestList = [];
+                        }
                     }
                 }
+            }if(hitnum==1){
+                control_json(data)
+                console.log(FinalRestList)
+                choice_random(1, FinalRestList)
+                FinalRestList = [];
             }
+
         }
 
         // リクエストをURLに送信
