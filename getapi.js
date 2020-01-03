@@ -102,8 +102,10 @@ function jsonget(type, input) {
         requestss.onload = function () {
             datan = this.response;
             console.log(datan)
+            
+            
             control_json(datan, whichrequest);
-
+            
             FinalRestList = [];
             FinalURL = "";
         }
