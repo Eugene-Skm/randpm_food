@@ -11,7 +11,9 @@
     <script type="text/javascript" src="animation.js" charset="UTF-8"></script>
     <script type="text/javascript" src="judge.js" charset="UTF-8"></script>
     <script type="text/javascript" src="format.js" charset="UTF-8"></script>
-    　
+    　<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+1
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script>
         jsonget(2, null);
@@ -72,7 +74,7 @@
                 </div>
             </div>
             <div id="way_manual" class="way_selection">
-                <div class="way_type"><input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man"><label for="way_radio_man">エリアを自分で選択</label></div>
+                <div class="way_type"><!--<input name="way_select_radio" id="way_radio_man" class="radio-input" type="radio" value="man"><label for="way_radio_man">エリアを自分で選択</label>-->エリアを手動選択（-準備中　Coming Soon-）</div>
                 <div class="details" id="basic_op">
                     <div id="area_sels">
                         <div id="pref_sels" class="are_selbox">
@@ -103,6 +105,7 @@
         <div id="result_area">
             <div id="result">
                 <div id="shop_info">
+                    <div id="basic_shopinfo">
                     <h6>
                         <p id="msg" class="msg"></p>
                     </h6>
@@ -115,8 +118,10 @@
                     <h4>
                         <p id="tel"></p>
                     </h4>
+                        </div>
                     <div id="shortcut_img"><a href="" id="gnavi_scut" target="_blank"><img src="g_navi.jpg" id="gnavi_logo"></a></div>
                 </div>
+                    
                 <div id="address">
                     <label for="mapframe">所在地</label>
                     <div id="mapframe"></div>
