@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Foodlette</title>
     <link rel="stylesheet" href="main.css" type="text/css" charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="loc.js" charset="UTF-8"></script>
@@ -11,10 +11,14 @@
     <script type="text/javascript" src="animation.js" charset="UTF-8"></script>
     <script type="text/javascript" src="judge.js" charset="UTF-8"></script>
     <script type="text/javascript" src="format.js" charset="UTF-8"></script>
-    　<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-1
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="今日のお食事、ランダムに決めてみませんか？あなたの位置情報をもとに周囲の飲食店を自動で選んでくれます。飲み放題、食べ放題対応にも対応　ぐるなびへの直接リンク　店の位置のマップも掲載！"/>
+    
+    <meta property="og:url" content="https://ysta.shop/" />
+<meta property="og:title" content="Foodlette" />
+<meta property="og:image" content="url_img.jpg" />
+<meta property="og:description" content="今日のお食事、ランダムに決めてみませんか？あなたの位置情報をもとに周囲の飲食店を自動で選んでくれます。" />
     <script>
         jsonget(2, null);
 
@@ -23,7 +27,8 @@
 
 <body>
     <header class="maintitle">
-        <h1 class="p-title">food roolet!</h1>
+        <h1 class="p-title">foodLette!</h1>
+        <div id="p-subtitle"><h2>～あなたの今日の食事を選んでくれます～</h2></div>
     </header>
     <main class="pagemain">
         <div id="way_selector">
@@ -79,7 +84,7 @@
                     <div id="area_sels">
                         <div id="pref_sels" class="are_selbox">
                             <label for="pref_sel">都道府県</label>
-                            <select id="pref_sel" class="selecter" name="pref_sel"></select>
+                            <select id="pref_sel" disabled class="selecter" name="pref_sel"></select>
                         </div>
                         <div id="areal_sels"class="are_selbox">
                             <label for="area_l">大エリア</label>
